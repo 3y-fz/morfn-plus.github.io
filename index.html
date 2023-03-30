@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MorfnPlus Profile</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" type="test/css" href="style.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins' , sans-serif;
+}
+:root
+{
+    --bg: #0c0c0c
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bg);
+}
+p{
+    font-family: 'Cairo', sans-serif;
+}
+.card
+{
+    position: relative;
+    transition: 0.5s;
+    height: 100px;
+    transition-delay: 0.5s;
+}
+.card.active
+{
+    height: 450px;
+    transition-delay: 0s;
+}
+.card .user
+{
+    position: relative;
+    width: 400px;
+    min-height: 150px;
+    background: #9d0706;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 60px 40px 30px;
+}
+.card .user .imgBx
+{
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 6px solid #111;
+    overflow: hidden;
+    transition: 0.5s;
+    z-index: 10;
+}
+.card .user .imgBx img
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card .user .content
+{
+    position: relative;
+    text-align: center;
+}
+.card .user .content h2
+{
+    font-size: 1.2em;
+    line-height: 1.05em;
+    font-weight: 600;
+    color: #fff;
+}
+.card .user .content h2 span
+{
+    font-size: 0.90em;
+    font-weight: 400;
+    font-family: 'Cairo', sans-serif;
+}
+.card .user .toggle
+{
+    position: absolute;
+    bottom: 0;
+    width: 120px;
+    padding: 5px 15px;
+    background: #fff;
+    border-radius: 30px;
+    transform: translateY(50%);
+    border: 6px solid var(--bg);
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.5s;
+}
+.card.active .user .toggle
+{
+    background: #ec6b6b;
+    color: #fff;
+}
+.card .user .toggle::before
+{
+    content: 'فتح';
+    font-family: 'Cairo', sans-serif;
+}
+.card.active .user .toggle::before
+{
+    content: 'اغلاق';
+    font-family: 'Cairo', sans-serif;
+}
+.card .contact
+{
+    position: relative;
+    top: 30px;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: 0.5s;
+}
+.card.active .contact
+{
+    height: 325px;
+}
+.card .contact li
+{
+    list-style: none;
+    width: 100%;
+    min-height: 100px;
+    background: #d0d0d0;
+    border-radius: 10px;
+    display: flex;
+    transition: 0.5s;
+    opacity: 0;
+    transform: scale(0);
+    padding: 10px 30px;
+}
+.card.active .contact li
+{
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: calc(0.25s * var(--i));
+}
+.card.active .contact:hover li
+{
+    opacity: 0.15;
+    filter: blur(2px);
+    transition-delay: 0s;
+}
+.card.active .contact li:hover
+{
+    opacity: 1;
+    filter: blur(0px);
+}
+.card .contact li a
+{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+}
+.card .contact li a .iconBx
+{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: var(--clr);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card .contact li a .iconBx i
+{
+    color: #fff;
+    font-size: 1.5em;
+}
+.card .contact li a p
+{
+    color: #666;
+    font-size: 1.1em;
+}
+.card .contact li a:hover p
+{
+    color: #111;
+}
+</style>
+<body>
+    <div class="card">
+        <div class="user">
+            <div class="imgBx">
+                <img src="454.jpg">
+            </div>
+            <div class="content">
+                <h2><span>المتجر الاول لتقديم الخدمات الرقمية والاكواد الرسمية و تطبيقات بلس موثقون بوزارة</span></h2>
+            </div>
+            <span class="toggle"></span>
+        </div>
+        <ul class="contact">
+            <li style="--clr:#670401;--i:0">
+            <a href="https://morfn-store.com/?utm_medium=social&utm_source=heylink.me">
+                <div class="iconBx"><i class="fa-solid fa-store"></i></div>
+                <p>متجرنا الالكتروني</p>
+            </a>
+        </li>
+            <li style="--clr:#670401;--i:1">
+            <a href="https://morfn-store.com/%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%D8%A7%D8%AA-%D8%A8%D9%84%D8%B3-%D9%84%D8%AC%D9%87%D8%A7%D8%B2-%D9%88%D8%A7%D8%AD%D8%AF-%D9%84%D9%85%D8%AF%D8%A9-%D8%B3%D9%86%D9%87-%D9%83%D8%A7%D9%85%D9%84%D9%87-%D8%A7%D9%8A%D9%81%D9%88%D9%86/p1723151845">
+                <div class="iconBx"><i class="fa-solid fa-mobile"></i></div>
+                <p>تطبيقات بلس ( للايفون )</p>
+            </a>
+        </li>
+            <li style="--clr:#670401;--i:2">
+            <a href="https://morfn-store.com/%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%D8%A7%D8%AA-%D8%A8%D9%84%D8%B3-%D9%84%D8%AC%D9%87%D8%A7%D8%B2-%D9%88%D8%A7%D8%AD%D8%AF-%D9%84%D9%85%D8%AF%D8%A9-%D8%B3%D9%86%D9%87-%D9%83%D8%A7%D9%85%D9%84%D9%87-%D8%A7%D9%8A%D8%A8%D8%A7%D8%AF/p1332321805">
+                <div class="iconBx"><i class="fa-solid fa-tablet-button"></i></div>
+                <p>تطبيقات بلس ( للايباد )</p>
+            </a>
+        </li>
+        <li style="--clr:#670401;--i:2">
+            <a href="https://morfn-store.com/%D8%A7%D8%B4%D8%AA%D8%B1%D8%A7%D9%83-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%D8%A7%D8%AA-%D8%A8%D9%84%D8%B3-%D9%84%D8%AC%D9%87%D8%A7%D8%B2-%D9%88%D8%A7%D8%AD%D8%AF-%D9%84%D9%85%D8%AF%D8%A9-%D8%B3%D9%86%D9%87-%D9%83%D8%A7%D9%85%D9%84%D9%87-%D8%A7%D9%8A%D8%A8%D8%A7%D8%AF/p1332321805">
+                <div class="iconBx"><i class="fa-solid fa-tablet-button"></i></div>
+                <p>تطبيقات بلس ( للايباد )</p>
+            </a>
+        </li>
+        </ul>
+    </div>
+    <script>
+        let toggle = document.querySelector('.toggle');
+        let card = document.querySelector('.card');
+        toggle.onclick = function(){
+            card.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
